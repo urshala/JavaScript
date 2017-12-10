@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ZipReader</title>
+	
+	<style>
+		.formgroup{
+			display: none;
+		}
+		#error{
+			font-size: bolder;
+			color: red;
+			text-align: center;
+		}
+		#myForm{
+			padding-left: 150px;
+		}
+		#submitButton{
+			margin-top: 1.5em;
+			margin-left: 5rem;
+		}
+
+		.googleContainer{
+			width: 80%;
+			margin: 0 auto;
+			padding-top: 10px;
+		}
+		table{
+			margin-left: 150px;
+			border: 1px solid black;
+    		border-collapse: collapse;
+    		margin-top: 5px;
+		}
+		table th{
+			width: 25%;
+		}
+		table td{
+			padding: 5px;
+			text-align: left;
+			border: 1px solid black;
+    		border-collapse: collapse;
+		}
+		#history{
+			float: right;
+			border: 1px solid black;
+
+		}
+		
+		li > :first-child{
+			padding-right: 10px;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="container" style="margin: 10px;">
+		<div id="history">
+					<h2>History of last 10 search</h2>
+					<ol class="historyList">
+					</ol>
+				</div>
+		<div class="userInput">
+			<form id="myForm">
+				Select your country: <!--input type="text" name="selectCountry" placeholder="Enter country"><br -->
+              		<select >
+		                <option value="Finland">Finland</option>
+		                <option value="Sweden">Sweden</option>
+		                <option value="Germany">Germany</option>
+		                <option value="France">France</option>
+              		</select>
+				<br>
+				<span class="zipCode" style="margin-top: 14px; display: block;">
+					ZIP Code: <input type="text" name="selectZipCode" placeholder="ZIP Code"><br>
+				</span>
+				<button id="submitButton" onclick="searchData(event)">SEARCH</button>
+			</form>
+			<div class="result">
+				<div id="error"></div>
+				<table>
+					<tbody>
+						<tr>
+							<th>Place</th>
+							<th>Longitude</th>
+							<th>Latitude</th>
+						</tr>
+						<tr>
+							<td id="country"></td>
+							<td id="longitude"></td>
+							<td id="latitude"></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="googleContainer">
+					<div id="googleMap" style="width:100%;height:400px;"></div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="zipCode.js"></script>
+<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVJzkDy2OXeAlbGIslD6SOxqvY8pGUtpU"></script>
+</body>
+</html>

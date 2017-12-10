@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bus Line</title>
+	<style>
+		.container{
+			padding: 10px;
+		}
+		form{
+			margin-top: 20px;
+		}
+		.buttons{
+			display: flex;
+			justify-content: space-between;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+		#googleMap{
+
+		}
+	</style>
+	
+</head>
+<body>
+	<div class="container">
+		<form>
+			Select the bus line: <input type="text" id="busNumber"/><br>
+			<div class="buttons">
+				<button onclick="showRoute(event)">Show Buses</button>
+				<button onclick="showRoute(event)">Refresh</button>
+				<button onclick="showR(event)">Show full route</button>
+			</div>
+		</form>
+		<div class="myMap" style="width:80%;height:80vh; margin: 0 auto;">
+			<div id="googleMap" style="width:100%; height: 100%;"></div>
+		</div>
+		
+	</div>
+</body>
+<script type="text/javascript" src="bus.js"></script>
+<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVJzkDy2OXeAlbGIslD6SOxqvY8pGUtpU"></script>
+</html>

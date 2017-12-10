@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Barcode Reader</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.8.0/dist/JsBarcode.all.min.js"></script>
+	<script type="text/javascript" src="barcode.js"></script>
+	<style>
+		#submitButton{
+			padding-left: 30px;
+		}
+
+		.contents{
+			padding: 10px;
+			margin-left: 30%;
+			margin-top: 5%;
+		}
+
+		.results{
+			display: none;
+			position: relative;
+		}
+		.resultsShow{
+			display: block;
+		}
+
+		.displayResult{
+			display: block;
+			border: 2px solid black;
+			width: 70%;
+			
+		}
+		.myResult{
+			position: relative;
+			margin-bottom: 30%;
+		}
+		.toggleHide{
+			display: none;
+		}
+		.toggleShow{
+			display: inline-block;
+			margin-left: 56%;
+		}
+		p{
+			padding: 15px;
+		}
+		span:nth-child(even){
+			padding-left: 15px;
+		}
+
+		.barcodeImage{
+			position: absolute;
+			bottom: 0;
+			margin-left: 5px;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="contents">
+			<div class="userForm">
+				Virtual bar code: <input type="text" id="userInput" placeholder="enter the virtual code here"><br>
+				<button id="submitButton" class="mybutton ">Decode</button>
+			</div>
+			<button class="toggleHide">Hide</button>
+			<div class="results">
+				<svg class="barcodeImage"></svg>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
